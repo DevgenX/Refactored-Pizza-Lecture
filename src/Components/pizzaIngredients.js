@@ -3,12 +3,9 @@ import React from "react";
 const pizzaIngredients = ({ ingredient }) => {
   return (
     <div>
-      {ingredient.map((ingredient, index) => {
-        return (
-          <ul key={index}>
-            <li>{ingredient}</li>
-          </ul>
-        );
+      <h1>Pizza Ingredients : </h1>
+      {ingredient.map((recipe, index) => {
+        return <li key={index}>{recipe}</li>;
       })}
     </div>
   );

@@ -1,0 +1,8 @@
+{
+  "pizza": [
+    {
+      "name": "Pepperoni Pizza",
+      "ingredients": ["Pepperoni", "Anchovies", "Red Peppers", "Sausage"]
+    }
+  ]
+}
