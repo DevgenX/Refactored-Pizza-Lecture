@@ -19,21 +19,27 @@ const App = () => {
     setSearchField(e.target.value.toLocaleLowerCase());
   };
 
+  // handle fetch data gets the data from the pizza.json then use setIngredients to set the values
   const handleFetchData = async () => {
     const response = await fetch("http://localhost:3000/pizza");
     const pizzaData = await response.json();
     setIngredients(pizzaData[0].ingredients);
   };
 
+  // Wrapped the invocation of handleFetchData on useEffect, so the data will not trigger infinite re-render
   useEffect(() => {
     handleFetchData();
   }, []);
+
+  // handleClick flips the value of isClicked which is set to false initially.
 
   const handleClick = () => {
     // const flip = !isClicked;
     setIsClicked(!isClicked);
   };
 
+  // This useEffect sets the value of Ingredients to be the initial value when the button is clicked
+  // the array is called dependency array, whenever it is triggered then the useEffect will fire.
   useEffect(() => {
     setIngredients(pizza);
   }, [isClicked]);
